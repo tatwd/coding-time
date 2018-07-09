@@ -1,0 +1,8 @@
+.vscode
+
+[Bb]in
+[Dd]ebug
+
+*.exe
+*.out
+*.o
