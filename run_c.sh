@@ -4,6 +4,7 @@ output_name="app"
 extern_files=()
 call_methods=()
 
+# read extern files from code comments
 readfiles () {
   i=0
   while read -r line
@@ -17,16 +18,19 @@ readfiles () {
   done < './main.c'
 }
 
+# compile code
 compiled () {
+  # remove old app.exe
   if [ -f "${output_name}.exe" ];then
     rm ${output_name}.exe
   fi
 
   echo "Read files and compiling..."
   readfiles
-  $(gcc ./main.c ${extern_files[*]} -o ${output_name}.exe)
+  gcc ./main.c ${extern_files[*]} -o ${output_name}.exe
 }
 
+# run app
 running () {
   if [ -f "${output_name}.exe" ];then
     echo -e "Start running test cases...\n"
@@ -36,8 +40,5 @@ running () {
   fi
 }
 
-# compiled
-compiled
-
-# running
-running
+# call functions
+compiled && running
