@@ -1,5 +1,6 @@
-#include <stdio.h>
-
+/**
+ * 替换空格
+ */
 void replace_space(char *str, int length) {
     char *tmp = "%20", *p;
     int space, i, dist;
