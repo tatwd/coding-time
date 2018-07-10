@@ -1,4 +1,4 @@
-function replace_space(str, fmt) {
+function replace_space(str) {
   // solution 1
   // return str.replace(/\s/g, fmt);
 

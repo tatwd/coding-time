@@ -32,14 +32,14 @@ int utest(const char *msg, char *actual, char *expect) {
 
     if (strcmp(actual, expect)) {
         printf(
+            "(X) FAILED: %s\n"
             "ACTUAL: %s\n"
-            "EXPECT: %s\n"
-            "FAILED: %s\n\n",
-            actual, expect, msg
+            "EXPECT: %s\n",
+            msg, actual, expect
         );
         return 1;
     } else {
-        printf("PASSED!\n");
+        printf("(V) PASSED!\n");
         return 0;
     }
 }

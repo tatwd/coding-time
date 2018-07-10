@@ -109,9 +109,9 @@ int main () {
     test_insertion_sort();
     test_shell_sort();
     test_heap_sort();
-    test_replace_space();
     test_selection_sort();
-    */
     test_bubble_sort();
+    */
+    test_replace_space();
     return 0;
 }

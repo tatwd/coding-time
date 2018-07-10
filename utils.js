@@ -62,8 +62,33 @@ equal.forObject = function(a, b) {
   // TODO
 };
 
+/**
+ *  A simple unit testing method
+ * @param {string} msg
+ * @param {function} cb
+ */
+function utest(msg, cb) {
+  var success = false;
+  var helper = {
+    it: function(actual) {
+      return {
+        eq: function(expect) {
+          success = equal(actual, expect);
+          !success
+            ? console.log(
+                `(X) FAILED: ${msg}\nACTUAL: ${actual}\nEXPECT: ${expect}`
+              )
+            : console.log(`(V) PASSED!`);
+        }
+      };
+    }
+  };
+  cb(helper);
+}
+
 module.exports = {
   type,
   clone,
-  equal
+  equal,
+  utest
 };
