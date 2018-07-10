@@ -18,18 +18,26 @@ readfiles () {
 }
 
 compiled () {
-  return $(gcc ./main.c ${extern_files[*]} -o ${output_name}.exe)
+  if [ -f "${output_name}.exe" ];then
+    rm ${output_name}.exe
+  fi
+
+  echo "Read files and compiling..."
+  readfiles
+  $(gcc ./main.c ${extern_files[*]} -o ${output_name}.exe)
 }
 
 running () {
-  ./$output_name
+  if [ -f "${output_name}.exe" ];then
+    echo -e "Start running test cases...\n"
+    ./$output_name
+  else
+    echo "Failed compiling your code!"
+  fi
 }
 
-# compiled program and runing
-# compiled && running
-echo "Read files and compiling..."
-readfiles && compiled
+# compiled
+compiled
 
-echo -e "Start running test cases...\n"
-# clear
+# running
 running

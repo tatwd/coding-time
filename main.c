@@ -17,6 +17,12 @@ extern int shell_sort(int arr[], int n);
 /* @file ./sorting/heap_sort/main.c */
 extern void heap_sort(int arr[], int n);
 
+/* @file ./sorting/selection_sort/main.c */
+extern void selection_sort(int arr[], int n);
+
+/* @file ./sorting/bubble_sort/main.c */
+extern void bubble_sort(int arr[], int n);
+
 void test_find() {
     int has;
     int arr[][3] = {
@@ -57,9 +63,7 @@ void test_insertion_sort() {
     int arr[] = { 34, 8, 64, 51, 32, 21 };
 
     putarrln("%d ", arr, n);
-
     insertion_sort(arr, n);
-
     putarrln("%d ", arr, n);
 }
 
@@ -81,13 +85,33 @@ void test_heap_sort() {
     putarrln("%d ", arr, n);
 }
 
+void test_selection_sort() {
+    int n = 6;
+    int arr[] = { 34, 8, 64, 51, 32, 21 };
+
+    putarrln("%d ", arr, n);
+    selection_sort(arr, n);
+    putarrln("%d ", arr, n);
+}
+
+void test_bubble_sort() {
+    int n = 6;
+    int arr[] = { 34, 8, 64, 51, 32, 21 };
+
+    putarrln("%d ", arr, n);
+    bubble_sort(arr, n);
+    putarrln("%d ", arr, n);
+}
+
 int main () {
     /*
     test_find();
     test_insertion_sort();
     test_shell_sort();
     test_heap_sort();
-    */
     test_replace_space();
+    test_selection_sort();
+    */
+    test_bubble_sort();
     return 0;
 }

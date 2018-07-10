@@ -5,7 +5,10 @@
 #include <string.h>
 #include <assert.h>
 
+#define TRUE  1
+#define FALSE 0
 #define ENDLINE printf("\n")
+#define arrlen(arr, len) ((len)=(sizeof(arr)/sizeof(arr[0])))
 
 void putarr(char *str, int *arr, int n) {
     assert(str != NULL);
