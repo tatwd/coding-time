@@ -2,6 +2,8 @@
 
 [Bb]in
 [Dd]ebug
+[Tt]emp
+[Tt]mp
 
 *.exe
 *.out

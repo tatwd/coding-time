@@ -3,6 +3,7 @@ var utest = require('./utest.js');
 /* coding modules */
 var find = require('./coding/find-in-array/main.js');
 var replace_space = require('./coding/replace-space/main.js');
+var mumber_fromat = require('./coding/number-format/main.js');
 
 /* sorting module */
 var insertion_sort = require('./sorting/insertion_sort/main.js');
@@ -28,4 +29,13 @@ utest('should be sorted!', ({ it }) => {
   // insertion_sort(arr, 6);
   shell_sort(arr);
   it(arr).eq(expect);
+});
+
+utest('should be return integer', ({ it }) => {
+  it(mumber_fromat(123)).eq('123');
+  it(mumber_fromat(123.4542)).eq('123.4542');
+  it(mumber_fromat(1234)).eq('1,234');
+  it(mumber_fromat(1234.5642)).eq('1,234.5642');
+  it(mumber_fromat(123456.78)).eq('123,456.78');
+  it(mumber_fromat(12345678.9)).eq('12,345,678.9');
 });

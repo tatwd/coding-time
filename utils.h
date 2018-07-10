@@ -1,5 +1,5 @@
-#ifndef __UTILS__
-#define __UTILS__
+#ifndef UTILS__H
+#define UTILS__H
 
 #include <stdio.h>
 #include <string.h>
@@ -26,14 +26,14 @@ int utest(const char *msg, char *actual, char *expect) {
     assert(actual != NULL && expect != NULL);
     if (strcmp(actual, expect)) {
         printf(
-            "ACTUAL: %s\n"
+            "\nACTUAL: %s\n"
             "EXPECT: %s\n"
             "FAILED: %s\n\n",
             actual, expect, msg
         );
         return 1;
     } else {
-        printf("PASSED!\n\n");
+        printf("PASSED!\n");
         return 0;
     }
 }

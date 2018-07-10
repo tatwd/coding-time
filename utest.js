@@ -35,17 +35,25 @@ function eqArray(arr1, arr2) {
 
 function utest(msg, cb) {
   var success = false;
+  var result = [];
   var helper = {
     it: function(actual) {
       return {
         eq: function(expect) {
-          console.log('Actual:', actual);
-          console.log('Expect:', expect);
           if (isArray(actual)) {
             success = eqArray(actual, expect);
           } else if (isObject(actual)) {
+            // TODO
           } else {
-            success = actual == expect;
+            success = actual === expect;
+          }
+          result.push(success);
+          if (!success) {
+            console.log(
+              `\nActual: ${actual}\nExpect: ${expect}\nFAILED: ${msg}`
+            );
+          } else {
+            console.log('PASSED!');
           }
         }
       };
@@ -54,13 +62,16 @@ function utest(msg, cb) {
 
   cb(helper);
 
-  if (success) {
-    successTotal++;
-    console.log('Successful!\n');
-  } else {
-    failedTotal++;
-    console.warn('Failed:', msg, '\n');
-  }
+  // result.forEach(function(success) {
+  //   if (success) {
+  //     successTotal++;
+  //     console.log('PASSED!');
+  //   } else {
+  //     failedTotal++;
+  //     console.warn('FAILED:', msg, '\n');
+  //   }
+  // });
+
   // console.log(
   //   'Completed ' + successTotal + ' successfully, and ',
   //   failedTotal + ' failed!'

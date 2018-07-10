@@ -17,7 +17,7 @@ void replace_space(char *str, int length) {
             str[i] = str[i - dist];
         } else {
             str[i] = *(--p);
-            if (dist > 0) dist--;
+            if (p != tmp) dist--;
         }
     }
 }
