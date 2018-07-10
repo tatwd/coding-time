@@ -13,18 +13,18 @@ function isArray(obj) {
   return type(obj) === 'Array';
 }
 
-function eqType(obj1, obj2) {
+function sameType(obj1, obj2) {
   return type(obj1) === type(obj2);
 }
 
-function eqArray(arr1, arr2) {
+function sameArray(arr1, arr2) {
   var i,
     len1 = arr1.length,
     len2 = arr2.length;
 
   if (len1 !== len2) return false;
   for (i = 0; i < len1; i++) {
-    if (eqType(arr1[i], arr2[i])) {
+    if (sameType(arr1[i], arr2[i])) {
       if (arr1[i] !== arr2[i]) return false;
     } else {
       return false;
@@ -41,7 +41,7 @@ function utest(msg, cb) {
       return {
         eq: function(expect) {
           if (isArray(actual)) {
-            success = eqArray(actual, expect);
+            success = sameArray(actual, expect);
           } else if (isObject(actual)) {
             // TODO
           } else {
