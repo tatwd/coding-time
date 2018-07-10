@@ -30,6 +30,6 @@ running () {
 echo "Read files and compiling..."
 readfiles && compiled
 
-echo "Start running test cases..."
-clear
+echo -e "Start running test cases...\n"
+# clear
 running
