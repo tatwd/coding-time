@@ -1,0 +1,28 @@
+.container {
+  background-color: aqua;
+  padding: 5px;
+  color: white;
+
+  /* display: flex; */
+  /* overflow: hidden; */
+}
+
+.left {
+  background-color: red;
+
+  float: left;
+  overflow: auto;
+  width: 200px;
+}
+
+.right {
+  background-color: blue;
+
+  /*
+  float: left;
+  width: calc(100% - 200px);
+  */
+
+  /* width: 100%; */
+  overflow: auto;
+}
