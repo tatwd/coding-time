@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <time.h>
 #include "utils.h"
 
 /* @file ./coding/find-in-array/main.c */
@@ -104,14 +105,18 @@ void test_bubble_sort() {
 }
 
 int main () {
-    /*
+    clock_t start, end;
+    start = clock() / CLOCKS_PER_SEC;
+
     test_find();
     test_insertion_sort();
     test_shell_sort();
     test_heap_sort();
     test_selection_sort();
-    test_bubble_sort();
-    */
     test_replace_space();
+    test_bubble_sort();
+
+    end = clock() / CLOCKS_PER_SEC;
+    printf("\nIt took %lds.\n", (double)(end - start));
     return 0;
 }
