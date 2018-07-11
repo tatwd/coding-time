@@ -63,7 +63,7 @@ equal.forObject = function(a, b) {
 };
 
 /**
- *  A simple unit testing method
+ * A simple unit testing method
  * @param {string} msg
  * @param {function} cb
  */
