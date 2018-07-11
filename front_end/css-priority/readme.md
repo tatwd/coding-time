@@ -5,7 +5,7 @@
 
 ### 权重：`!important`
 
-该规则设置将会覆盖其他任何规则，可视为优先级最高（技术上与优先级级无关，见 [MDN](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Specificity#%E4%BE%8B%E5%A4%96%E7%9A%84_!important_%E8%A7%84%E5%88%99)）
+该规则设置将会覆盖其他任何规则，可视为优先级最高（技术上与优先级无关，见 [MDN](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Specificity#%E4%BE%8B%E5%A4%96%E7%9A%84_!important_%E8%A7%84%E5%88%99)）
 
 ### 样式环境
 即`外联样式`、`内联样式`、`行内样式`，三者中`行内样式`的优先级最高，前两者看声明顺序。
