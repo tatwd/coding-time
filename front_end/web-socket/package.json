@@ -6,6 +6,9 @@
   "author": "_king",
   "license": "MIT",
   "private": true,
+  "scripts": {
+    "dev": "node app.js"
+  },
   "dependencies": {
     "ws": "^5.2.2"
   }
