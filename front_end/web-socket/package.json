@@ -1,0 +1,12 @@
+{
+  "name": "web-socket",
+  "version": "1.0.0",
+  "description": "A simple demo for WebSocket.",
+  "main": "index.js",
+  "author": "_king",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "ws": "^5.2.2"
+  }
+}

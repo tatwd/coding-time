@@ -1,5 +1,7 @@
 .vscode
 
+node_modules
+
 [Bb]in
 [Dd]ebug
 [Tt]emp
