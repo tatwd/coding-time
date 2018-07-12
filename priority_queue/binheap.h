@@ -64,9 +64,9 @@ void insert(element_type value, priority_queue heap) {
 #endif
 
 /*
- 
+
     1
   /  \
- 2   3
+ 2    3
 
 */
