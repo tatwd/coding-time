@@ -117,6 +117,6 @@ int main () {
     test_bubble_sort();
 
     end = clock() / CLOCKS_PER_SEC;
-    printf("\nIt took %lds.\n", (double)(end - start));
+    printf("\nIt took %gs.\n", (double)(end - start));
     return 0;
 }

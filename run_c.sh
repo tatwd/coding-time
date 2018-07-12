@@ -34,7 +34,7 @@ compiled () {
 running () {
   if [ -f "${output_name}.exe" ];then
     echo -e "Start running test cases...\n"
-    ./$output_name
+    ./${output_name}.exe
   else
     echo "Failed compiling your code!"
   fi
