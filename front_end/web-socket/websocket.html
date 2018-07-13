@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WebSocket Test</title>
+    <script>
+      var wsUri = 'wss://echo.websocket.org/';
+      var message, sendBtn, output, websocket;
+
+      function init() {
+        message = document.querySelector('#message');
+        sendBtn = document.querySelector('#send-btn');
+        output = document.querySelector('#output')
+        websocket = new WebSocket(wsUri);
+        sendBtn.addEventListener('click', onSendBtnClick, false);
+        testWebSocket();
+      }
+
+      function onSendBtnClick() {
+        var msg = message.value;
+        doSend(msg);
+      }
+
+      function testWebSocket() {
+        websocket.onopen = onOpen;
+        websocket.onmessage = onMessage;
+        websocket.onerror = onError;
+        websocket.onclose = onClose;
+      }
+
+      function onOpen(evt) {
+        console.log('open', evt);
+        writeToScreen("CONNECTED");
+        // doSend("WebSocket Hello rocks");
+      }
+
+      function onMessage (evt) {
+        console.log('message', evt);
+        writeToScreen('<span style="color: blue;">RESPONSE: ' + evt.data+'</span>');
+        // websocket.close();
+      }
+
+      function onError (evt) {
+        console.log('error', evt);
+        writeToScreen('<span style="color: red;">ERROR:</span> ' + evt.data);
+      }
+
+      function onClose (evt) {
+        console.log('close', evt);
+        writeToScreen("DISCONNECTED");
+      }
+
+      function doSend (msg) {
+        writeToScreen('SENT: ' + msg);
+        websocket.send(msg);
+      }
+
+      function writeToScreen (msg) {
+        var pre = document.createElement('pre');
+        pre.style.wordWrap = 'break-word';
+        pre.innerHTML = msg;
+        output.appendChild(pre);
+      }
+
+      window.addEventListener('load', init, false);
+    </script>
+  </head>
+  <body>
+    <h2>WebSocket Test</h2>
+    <input type="text" id="message">
+    <button id="send-btn">SEND</button>
+    <div id="output"></div>
+  </body>
+</html>
