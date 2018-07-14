@@ -1,6 +1,16 @@
 var _keys = Object.keys;
 var _define = Object.defineProperty;
 
+// TODO
+/*
+function Dep() {
+  // Array<Watcher>
+  this.subs = [];
+}
+
+Dep.prototype.depend = function() {};
+*/
+
 /**
  * 一个简单模拟 Vue 的 MVVM 模型
  * @param {object} options 配置项
@@ -26,8 +36,10 @@ MVVM.prototype._observe = function(data) {
   var current;
   _keys(data).forEach(key => {
     current = data[key];
+
     _this._binding[key] = { _directives: [] };
     var binding = _this._binding[key];
+
     if (current && typeof current === 'object') {
       _this._observe(current);
     }
