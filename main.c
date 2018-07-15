@@ -15,6 +15,9 @@ extern unsigned int gcd(unsigned int m, unsigned int n);
 /* @file ./coding/single-number/main.c */
 extern void test_singleNumber();
 
+/* @file ./coding/binary-tree/same-tree/main.c */
+extern void test_isSameTree();
+
 /* @file ./sorting/insertion_sort/main.c */
 extern void insertion_sort(int arr[], int n);
 
@@ -124,8 +127,9 @@ int main () {
     test_heap_sort();
     test_selection_sort();
     test_bubble_sort();
-    */
     test_singleNumber();
+    */
+    test_isSameTree();
 
     end = clock() / CLOCKS_PER_SEC;
     printf("\nIt took %gs.\n", (double)(end - start));
