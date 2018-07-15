@@ -8,6 +8,7 @@
 #include "./coding/math/gcd.c"
 #include "./coding/single-number/main.c"
 #include "./coding/binary-tree/same-tree/main.c"
+#include "./coding/binary-tree/max-depth/main.c"
 #include "./sorting/insertion_sort/main.c"
 #include "./sorting/shell_sort/main.c"
 #include "./sorting/heap_sort/main.c"
@@ -108,9 +109,10 @@ int main () {
     test_heap_sort();
     test_selection_sort();
     test_bubble_sort();
-    */
-    test_isSameTree();
     test_singleNumber();
+    test_isSameTree();
+    */
+    test_maxDepth();
 
     end = clock() / CLOCKS_PER_SEC;
     printf("\nIt took %gs.\n", (double)(end - start));

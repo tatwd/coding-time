@@ -19,16 +19,9 @@ TreeNode* insert(int x, TreeNode *tree) {
             tree->val = x;
             tree->left = tree->right = NULL;
         }
-        return tree;
-    }
-    tree->left = insert(x, tree->left);
-    tree->right = insert(x, tree->right);
-
-    /*else if (tree->val == NULL) {
-        tree->left = insert(x, tree->left);
-    } else if (tree->right == NULL) {
+    } else if (tree->left != NULL)
         tree->right = insert(x, tree->right);
-    }*/
+    else tree->left = insert(x, tree->left);
     return tree;
 }
 
@@ -36,7 +29,7 @@ TreeNode* insert(int x, TreeNode *tree) {
 void treeprint(TreeNode *root) {
     if (root != NULL) {
         treeprint(root->left);
-        printf("%d\n", root->val);
+        printf("%d ", root->val);
         treeprint(root->right);
     }
 }

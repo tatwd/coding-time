@@ -13,5 +13,20 @@ int maxDepth(TreeNode *root) {
 
 /* test */
 void test_maxDepth() {
-
+    TreeNode *root, *clone;
+    int i, arr[] = { 1, 2, 3, 4, 5, 6, 7 };
+    root = NULL;
+    for (i = 0; i < 7; i++) {
+        root = insert(arr[i], root);
+    }
+    /* the tree will be
+        1
+      /  \
+     2    3
+        /  \
+       4    5
+           / \
+          6   7
+    */
+    printf("Maximum depth of the tree is %d\n", maxDepth(root));
 }

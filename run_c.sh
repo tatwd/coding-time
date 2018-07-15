@@ -28,7 +28,7 @@ compiled () {
   echo "Read files and compiling..."
   # readfiles
   # gcc ./main.c ${extern_files[*]} -o ${output_name}.exe
-  gcc ./main.c -o ${output_name}.exe
+  gcc -g ./main.c -o ${output_name}.exe
 }
 
 # run app
