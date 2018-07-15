@@ -9,6 +9,9 @@ extern int find(int arr[][3], int row_length, int col_length, int target);
 /* @file ./coding/replace-space/main.c */
 extern int replace_space(char *str, int length);
 
+/* @file ./coding/math/gcd.c */
+extern unsigned int gcd(unsigned int m, unsigned int n);
+
 /* @file ./sorting/insertion_sort/main.c */
 extern void insertion_sort(int arr[], int n);
 
@@ -33,10 +36,7 @@ void test_find() {
     };
 
     has = find(arr, 3, 3, 1);
-    printf(
-        "%d\n",
-        has
-    );
+    printf("%d\n", has);
 }
 
 void test_replace_space() {
@@ -57,6 +57,10 @@ void test_replace_space() {
     replace_space(str4, strlen(str4));
     utest("replace space with \"%20\": 2 space (head, body)", str4, "%20hello%20world");
 
+}
+
+void test_gcd() {
+    printf("The GCD of 50 and 15 is %d\n", gcd(50, 15)); /* 5 */
 }
 
 void test_insertion_sort() {
@@ -109,11 +113,12 @@ int main () {
     start = clock() / CLOCKS_PER_SEC;
 
     test_find();
+    test_replace_space();
+    test_gcd();
     test_insertion_sort();
     test_shell_sort();
     test_heap_sort();
     test_selection_sort();
-    test_replace_space();
     test_bubble_sort();
 
     end = clock() / CLOCKS_PER_SEC;
