@@ -10,7 +10,7 @@ typedef struct TreeNode {
     struct TreeNode *right;
 } TreeNode;
 
-TreeNode* insert(int x, TreeNode *tree) {
+TreeNode *insert(int x, TreeNode *tree) {
     if (tree == NULL) {
         tree = (TreeNode*)malloc(sizeof(TreeNode));
         if (tree == NULL)
@@ -32,6 +32,15 @@ void treeprint(TreeNode *root) {
         printf("%d ", root->val);
         treeprint(root->right);
     }
+}
+
+TreeNode *empty(TreeNode *root) {
+    if (root != NULL) {
+        empty(root->left);
+        empty(root->right);
+        free(root);
+    }
+    return NULL;
 }
 
 #endif

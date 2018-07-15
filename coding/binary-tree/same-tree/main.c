@@ -34,4 +34,6 @@ void  test_isSameTree() {
     treeprint(clone);
     printf("\nThey are same? %s",
         isSameTree(root, clone) ? "yes": "no");
+    empty(clone);
+    empty(root);
 }

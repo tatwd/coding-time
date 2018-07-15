@@ -6,6 +6,7 @@
 #include "./coding/find-in-array/main.c"
 #include "./coding/replace-space/main.c"
 #include "./coding/math/gcd.c"
+#include "./coding/math/power.c"
 #include "./coding/single-number/main.c"
 #include "./coding/binary-tree/same-tree/main.c"
 #include "./coding/binary-tree/max-depth/main.c"
@@ -113,6 +114,7 @@ int main () {
     test_isSameTree();
     */
     test_maxDepth();
+    test_power();
 
     end = clock() / CLOCKS_PER_SEC;
     printf("\nIt took %gs.\n", (double)(end - start));
