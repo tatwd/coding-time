@@ -3,35 +3,16 @@
 #include <time.h>
 #include "utils.h"
 
-/* @file ./coding/find-in-array/main.c */
-extern int find(int arr[][3], int row_length, int col_length, int target);
-
-/* @file ./coding/replace-space/main.c */
-extern int replace_space(char *str, int length);
-
-/* @file ./coding/math/gcd.c */
-extern unsigned int gcd(unsigned int m, unsigned int n);
-
-/* @file ./coding/single-number/main.c */
-extern void test_singleNumber();
-
-/* @file ./coding/binary-tree/same-tree/main.c */
-extern void test_isSameTree();
-
-/* @file ./sorting/insertion_sort/main.c */
-extern void insertion_sort(int arr[], int n);
-
-/* @file ./sorting/shell_sort/main.c */
-extern int shell_sort(int arr[], int n);
-
-/* @file ./sorting/heap_sort/main.c */
-extern void heap_sort(int arr[], int n);
-
-/* @file ./sorting/selection_sort/main.c */
-extern void selection_sort(int arr[], int n);
-
-/* @file ./sorting/bubble_sort/main.c */
-extern void bubble_sort(int arr[], int n);
+#include "./coding/find-in-array/main.c"
+#include "./coding/replace-space/main.c"
+#include "./coding/math/gcd.c"
+#include "./coding/single-number/main.c"
+#include "./coding/binary-tree/same-tree/main.c"
+#include "./sorting/insertion_sort/main.c"
+#include "./sorting/shell_sort/main.c"
+#include "./sorting/heap_sort/main.c"
+#include "./sorting/selection_sort/main.c"
+#include "./sorting/bubble_sort/main.c"
 
 void test_find() {
     int has;
@@ -127,9 +108,9 @@ int main () {
     test_heap_sort();
     test_selection_sort();
     test_bubble_sort();
-    test_singleNumber();
     */
     test_isSameTree();
+    test_singleNumber();
 
     end = clock() / CLOCKS_PER_SEC;
     printf("\nIt took %gs.\n", (double)(end - start));
