@@ -12,6 +12,9 @@ extern int replace_space(char *str, int length);
 /* @file ./coding/math/gcd.c */
 extern unsigned int gcd(unsigned int m, unsigned int n);
 
+/* @file ./coding/single-number/main.c */
+extern void test_singleNumber();
+
 /* @file ./sorting/insertion_sort/main.c */
 extern void insertion_sort(int arr[], int n);
 
@@ -112,6 +115,7 @@ int main () {
     clock_t start, end;
     start = clock() / CLOCKS_PER_SEC;
 
+    /*
     test_find();
     test_replace_space();
     test_gcd();
@@ -120,6 +124,8 @@ int main () {
     test_heap_sort();
     test_selection_sort();
     test_bubble_sort();
+    */
+    test_singleNumber();
 
     end = clock() / CLOCKS_PER_SEC;
     printf("\nIt took %gs.\n", (double)(end - start));
