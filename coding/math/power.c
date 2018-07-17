@@ -17,5 +17,5 @@ power(long int base, unsigned int exponent) {
 }
 
 void test_power() {
-    printf("3 ^ 3 = %d\n", power(3, 3));
+    printf("3 ^ 3 = %ld\n", power(3, 3));
 }

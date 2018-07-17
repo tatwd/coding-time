@@ -7,6 +7,10 @@ node_modules
 [Tt]emp
 [Tt]mp
 
+#  for cmake
+CMakeFiles
+CMakeCache.txt
+
 *.log
 *.exe
 *.out
