@@ -1,5 +1,6 @@
 #!/bin/bash
 
+<<COMMENT
 output_name="app"
 extern_files=()
 call_methods=()
@@ -43,3 +44,14 @@ running () {
 
 # call functions
 compiled && running
+COMMENT
+
+output_name="app"
+
+# remove old app.exe
+# if [ -f "${output_name}.exe" ];then
+#   rm ${output_name}.exe
+# fi
+
+# cmake -G "MinGW Makefiles" . &&
+mingw32-make && ./${output_name}.exe
