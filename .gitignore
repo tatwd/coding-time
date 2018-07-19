@@ -16,4 +16,4 @@ CMakeCache.txt
 *.out
 *.o
 cmake_install.cmake
-Makefiles
+Makefile
