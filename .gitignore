@@ -15,3 +15,5 @@ CMakeCache.txt
 *.exe
 *.out
 *.o
+cmake_install.cmake
+Makefiles
