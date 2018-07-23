@@ -1,0 +1,19 @@
+{
+  "name": "auth-api",
+  "version": "1.0.0",
+  "description": "A simple Auth API server with JWT.",
+  "main": "app.js",
+  "author": "_king",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "serve": "nodemon"
+  },
+  "dependencies": {
+    "express": "^4.16.3",
+    "jsonwebtoken": "^8.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.3"
+  }
+}
