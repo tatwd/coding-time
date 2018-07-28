@@ -1,5 +1,6 @@
 const container = document.querySelector('#container');
 const btn = document.querySelector('#btn');
+const dispatchBtn = document.querySelector('#dispatch-btn');
 
 // only set once
 btn.onclick = function() {
@@ -41,3 +42,20 @@ container.addEventListener(
   },
   true // call in captrue pharse before childen with same event
 );
+
+// add a handle that will be removed later
+var willRemoved = function() {
+  console.log('dispatch-btn:', 6);
+};
+dispatchBtn.addEventListener('click', willRemoved, false);
+
+// dispatch event after 1s
+// then remove it
+setTimeout(function() {
+  // fire a event
+  var event = new Event('click');
+  dispatchBtn.dispatchEvent(event);
+
+  // remove event handler
+  dispatchBtn.removeEventListener('click', willRemoved, false);
+}, 1000);
