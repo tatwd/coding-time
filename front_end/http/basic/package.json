@@ -1,0 +1,8 @@
+{
+  "name": "basic-http-server",
+  "version": "1.0.0",
+  "description": "A basic http server with primitive lib",
+  "main": "app.js",
+  "license": "MIT",
+  "private": true
+}
