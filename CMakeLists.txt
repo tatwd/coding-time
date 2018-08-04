@@ -6,11 +6,12 @@ cmake_minimum_required(VERSION 2.8)
 
 # support debugger
 set(CMAKE_BUILD_TYPE "Debug")
-set(CMAKE_CXX_FLAGS_DEBUG "$ENV{CXXFLAGS} -O0 -Wall -g")
+# set(CMAKE_CXX_FLAGS_DEBUG "$ENV{CXXFLAGS} -O0 -Wall -g")
+set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -Wall -g")
 # set(CMAKE_CXX_FLAGS_RELEASE "$ENV{CXXFLAGS} -O3 -Wall")
 
 project(Coding-Time)
 
 aux_source_directory(. DIR_SRCS)
 
-add_executable(app.out ${DIR_SRCS})
+add_executable(app ${DIR_SRCS})

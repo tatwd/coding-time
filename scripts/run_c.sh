@@ -46,6 +46,7 @@ running () {
 compiled && running
 COMMENT
 
+<< COMMENT
 output_name="app"
 
 # remove old app.exe
@@ -55,3 +56,7 @@ output_name="app"
 
 # cmake -G "MinGW Makefiles" . &&
 mingw32-make && ./${output_name}.exe
+COMMENT
+
+cd ../build
+./app

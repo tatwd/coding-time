@@ -1,9 +1,9 @@
-#!/bin/sh
+#!/bin/bash
 
 output_name="app"
 
 # enter build dir
-cd build
+cd ../build
 
 # check for app build
 if [ ! -f "${output_name}" ];then
