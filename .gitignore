@@ -6,6 +6,7 @@ node_modules
 [Dd]ebug
 [Tt]emp
 [Tt]mp
+_tmp
 
 #  for cmake
 CMakeFiles
