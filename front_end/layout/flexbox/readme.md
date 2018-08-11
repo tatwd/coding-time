@@ -1,5 +1,7 @@
 ## 弹性盒子布局
 
+> `display: flex;`
+
 即 Flex Box 布局。 
 
 有两类属性，分别作用于弹性盒容器（Flex Container）和子项（Flex Items）。
