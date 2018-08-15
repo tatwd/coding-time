@@ -18,11 +18,11 @@
 
 
 可以使用`grid-template-areas`来对容器进行区域划分，不要划分的区域使用`.`忽略。
-```css
+```
 grid-template-areas:
-  "header header header"
-  "advert content content"
-  "footer footer footer";
+  "header header header"        | header | header  | header  |
+  "advert content content"  =>  | advert | content | content |
+  "footer footer footer";       | footer | footer  | footer  |
 ```
 上面代码将一个容器按名称分为了 9 块 4 类区域，可以按值类比空间分布。子项只需使用`grid-area`来指定对应的区域就行。
 ```css
