@@ -33,7 +33,7 @@ grid-template-areas:
 - `repeat([count], [value])`：重复 `count` 个 `value`；
 - `minmax([min], [max])`：设定取值的区间在 `min` 和 `max` 之间。
 
-`auto-fill`是根据子项的大小及数量来分配容器的空间，单行不够会换行；`auto-fit`与前者类似，只不过它会在子元素无法撑开容器时，撑满整个容器。
+`auto-fill`是根据子项的大小及数量来分配容器的空间，单行不够容纳子项会换行；`auto-fit`与前者类似，只不过它会在子元素无法撑开容器时，撑满整个容器。
 ```css
 // 单行时有空余空间
 repeat(auto-fill, minmax(60px, 1fr));
