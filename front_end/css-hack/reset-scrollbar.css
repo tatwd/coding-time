@@ -1,0 +1,13 @@
+/*
+  重设滚动条的样式
+  值可自定义
+*/
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #c1c1c1;
+  border-radius: 4px;
+  margin: 0;
+}
