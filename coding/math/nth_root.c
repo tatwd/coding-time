@@ -12,18 +12,22 @@ more detail to see https://en.wikipedia.org/wiki/Nth_root_algorithm
 #include <stdio.h>
 #include <math.h>
 
-#define x_distance(a, n, x) (           \
-  ((a) / pow((x), (n) - 1) - (x)) / (n) \
-)                                       \
+/*
+get the `Δx`
+	( A / (x^(n-1)) - x) / n
+*/
+#define dx(base, n, x) (                   \
+  ((base) / pow((x), (n) - 1) - (x)) / (n) \
+)                                          \
 
 double nthroot(double base, int n)
 {
 	// init a x0
 	double x0 = base / 2;
-	double x1 = x0 + x_distance(base, n, x0);
+	double x1 = x0 + dx(base, n, x0);
 	while (fabs(x1 - x0) >= 1e-6) {
 		x0 = x1;
-		x1 = x0 + x_distance(base, n, x0);
+		x1 = x0 + dx(base, n, x0);
 	}
 	return x0;
 }
