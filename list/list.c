@@ -99,6 +99,7 @@ void remove_node(list *li, int x)
 	assert(li != NULL);
 
 	if (li->data == x) {
+		/* TOFIX: need free deleted node */
 		*li = *(li->next);
 		return;
 	}
@@ -116,15 +117,15 @@ void remove_node(list *li, int x)
 	}
 }
 
-/* TODO: need to analysis. */
-void remove_node2(list *li, list_node* x)
+void remove_node2(list **li, list_node* x)
 {
 	assert(li != NULL && x != NULL);
-	list_node *ptr = li;
-	while ((ptr) != x) {
-		ptr = ptr->next;
+	list_node **ptr = li;
+	while ((*ptr) != x) {
+		ptr = &(*ptr)->next;
 	}
-	*ptr = *(x->next);
+	*ptr = x->next;
+	free(x);
 }
 
 list_node *find(list *li, int x)

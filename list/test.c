@@ -11,7 +11,7 @@ int main()
 	print_list(li);
 
 	// remove_node(li, 12);
-	remove_node2(li, find(li, 12));
+	remove_node2(&li, find(li, 12));
 	print_list(li);
 
 	list_node *node = find(li, 3);
