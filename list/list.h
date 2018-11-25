@@ -18,6 +18,7 @@ list *array2list(int[], unsigned int size);
 void empty(list *);
 void insert(list *, int, int);
 void remove_node(list *, int);
+void remove_node2(list *, list_node *);
 list_node *find(list *, int);
 
 #endif // LIST_H
