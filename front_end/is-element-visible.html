@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Demo</title>
+    <style>
+      body {
+        margin: 0;
+        height: 1068px;
+      }
+      .container {
+        max-width: 666px;
+        margin: auto;
+      }
+      #foo {
+        color: white;
+        background-color: brown;
+        height: 120px;
+        padding: 15px;
+        margin-top: 15px;
+      }
+      #navbar {
+        background-color: white;
+      }
+      #navbar.is-shown {
+        position: fixed;
+        max-width: 666px;
+        width: 100%;
+        top: 0;
+      }
+      #navbar .nav-link {
+        display: inline-block;
+        margin-left: 15px;
+        color: brown;
+      }
+      #navbar .logo {
+        border-radius: 3px;
+        vertical-align: bottom;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <nav id="navbar">
+        <img
+          class="logo"
+          src="https://avatars1.githubusercontent.com/u/16670044?s=42&v=4"
+          alt="logo"
+        />
+        <a class="nav-link" href="#">Home</a>
+        <a class="nav-link" href="#">Foo</a>
+        <a class="nav-link" href="#">Bar</a>
+      </nav>
+      <div id="foo"><h2>Home</h2></div>
+    </div>
+
+    <script>
+      var navbar = document.querySelector('#navbar');
+      var foo = document.querySelector('#foo');
+      var fooParent = foo.parentElement;
+
+      window.onscroll = function(evt) {
+        foo.style.visibility = !isVisible(foo) ? 'hidden' : 'visible';
+
+        if (!isVisible(navbar)) {
+          if (!navbar.classList.contains('is-shown')) {
+            navbar.classList.add('is-shown');
+            navbar.parentElement.style.paddingTop = `${navbar.offsetHeight}px`;
+          }
+        } else {
+          navbar.classList.remove('is-shown');
+          navbar.parentElement.style.paddingTop = '0';
+        }
+      };
+      function isVisible(el) {
+        var { offsetTop, offsetHeight } = el;
+        // console.log('top:', offsetTop, 'height:', offsetHeight);
+        return window.scrollY < offsetHeight + offsetTop;
+      }
+    </script>
+  </body>
+</html>
