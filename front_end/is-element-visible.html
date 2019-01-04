@@ -59,8 +59,14 @@
     <script>
       var navbar = document.querySelector('#navbar');
       var foo = document.querySelector('#foo');
-      var fooParent = foo.parentElement;
 
+      // check for element visible
+      function isVisible(el) {
+        var { offsetTop, offsetHeight } = el;
+        return window.scrollY < offsetHeight + offsetTop;
+      }
+
+      // test
       window.onscroll = function(evt) {
         foo.style.visibility = !isVisible(foo) ? 'hidden' : 'visible';
 
@@ -74,11 +80,6 @@
           navbar.parentElement.style.paddingTop = '0';
         }
       };
-      function isVisible(el) {
-        var { offsetTop, offsetHeight } = el;
-        // console.log('top:', offsetTop, 'height:', offsetHeight);
-        return window.scrollY < offsetHeight + offsetTop;
-      }
     </script>
   </body>
 </html>
