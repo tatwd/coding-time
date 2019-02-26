@@ -17,3 +17,7 @@ indent_size = 2
 [*.md]
 trim_trailing_whitespace = false
 insert_final_newline = false
+
+[Makefile]
+tab_width = 4
+indent_style = tab

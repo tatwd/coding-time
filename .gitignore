@@ -18,4 +18,5 @@ CMakeCache.txt
 *.out
 *.o
 cmake_install.cmake
-Makefile
+# Makefile
+*.stackdump
