@@ -1,3 +1,5 @@
+/* 抽象工厂 p.57 */
+
 #include <iostream>
 
 class Product {
