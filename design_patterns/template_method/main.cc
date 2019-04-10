@@ -8,6 +8,7 @@ public:
 	int Add(int a, int b) {
 		return First(a) + Last(b);
 	}
+protected:
 	virtual int First(int v) { return v; }
 	virtual int Last(int v) { return v; }
 };
