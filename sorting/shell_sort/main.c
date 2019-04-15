@@ -5,7 +5,6 @@ int shell_sort(int arr[], int n) {
     int i, j, increment, count;
     int current;
 
-    count = 0;
     for (increment = n/2; increment > 0; increment /= 2)
         for (i = increment; i < n; i++) {
             current = arr[i];
@@ -15,7 +14,6 @@ int shell_sort(int arr[], int n) {
                 j -= increment
             ) {
                 arr[j] = arr[j - increment];
-                count++;
             }
             arr[j] = current;
         }
