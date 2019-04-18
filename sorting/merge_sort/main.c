@@ -52,9 +52,9 @@ void msort(int arr[], int tmp[],
 	int mid;
 	if (left < right) {
 		mid = (left + right) / 2;
-		msort(arr, tmp, left, mid);
-		msort(arr, tmp, mid + 1, right);
-		merge(arr, tmp, left, mid, right);
+		msort(arr, tmp, left, mid); /* 先左 */
+		msort(arr, tmp, mid + 1, right); /* 后右 */
+		merge(arr, tmp, left, mid, right); /* 左右合并 */
 	}
 }
 
