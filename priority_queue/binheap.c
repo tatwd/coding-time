@@ -37,6 +37,7 @@ int is_full(priority_queue heap)
 	return heap->size == heap->capacity;
 }
 
+/* check if the heap is empty */
 int is_empty(priority_queue heap)
 {
 	return heap->size == 0;
