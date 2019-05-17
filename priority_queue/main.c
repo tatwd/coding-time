@@ -1,3 +1,5 @@
+#include <stdlib.h>
+
 #include "../utils.h"
 #include "binheap.h"
 
@@ -22,6 +24,9 @@ int main()
 
 	increase_key(1, 22, heap);
 	putarrln("%d ", heap->elements, n);
+
+	free(heap->elements);
+	free(heap);
 
 	return 0;
 }
