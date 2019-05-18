@@ -117,6 +117,13 @@ void remove_node(list *li, int x)
 	}
 }
 
+/*
+使用 list ** 类型的原因：
+若使用 list * 类型，则中间变量 ptr 只是对 li 进行值拷贝，对
+ptr 的修（链表的头节点地址）改将不会影响 li 的值；即是说要想
+修改 li 的值，将要借助 list ** 类型变量指向变量 li 的地址，
+进而对 li 的值进行修改以达到删除的效果。
+*/
 void remove_node2(list **li, list_node* x)
 {
 	assert(li != NULL && x != NULL);
