@@ -8,7 +8,7 @@ f(n) = f(n - 1) + f(n - 2)
 /* 递归版 （效率底）*/
 long fib1(int n)
 {
-	if (n == 0 || n == 1)
+	if (n <= 1)
 		return 1;
 	else
 		return fib1(n - 1) + fib1(n - 2);
