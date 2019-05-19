@@ -21,11 +21,17 @@ ListNode *find_kth_to_tail(ListNode *head, unsigned int k)
 	if (head == NULL)
 		return NULL;
 
+	if (k == 0)
+		return NULL;
+
 	ListNode *aptr = head;
 	ListNode *bptr = NULL;
 
-	for (unsigned int i = 0; i < k - 1; ++i)
+	for (unsigned int i = 0; i < k - 1; ++i) {
 		aptr = aptr->next;
+		if (aptr == NULL) /* k > list.length */
+			return NULL;
+	}
 
 	bptr = head;
 
@@ -45,7 +51,7 @@ int main(int argc, char const *argv[])
 		ptr = ptr->next;
 	}
 
-	ListNode *node = find_kth_to_tail(head, 3);
+	ListNode *node = find_kth_to_tail(head, 6);
 
 	/* print list */
 	ptr = node;
