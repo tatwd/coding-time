@@ -23,4 +23,7 @@ int bsearch3(void *key, void *base,
 /* a example `cmpfn` for int */
 int int_cmp(void *ap, void *bp);
 
+/* 在“旋转数组”中二分查找  */
+int bsearch4(int key, int arr[], int n);
+
 #endif
