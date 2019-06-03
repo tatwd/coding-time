@@ -13,7 +13,7 @@ struct queue_t {
 struct queue_t *queue_new(int capacity)
 {
 	struct queue_t *queue = malloc(sizeof(struct queue_t));
-	queue->front = 0;
+	queue->front = -1;
 	queue->rear = -1;
 	queue->capacity = capacity;
 	queue->size = 0;
@@ -58,20 +58,28 @@ void enqueue(struct queue_t *queue, element_t x)
 {
 	if (queue->size == queue->capacity)
 		return;
-	int rear = queue->rear;
-	if (++rear >= queue->capacity)
-		rear = 0;
-	queue->rear = rear;
-	queue->data[rear] = x;
+	if (queue->size == 0) {
+		queue->front = 0;
+		queue->rear = 0;
+	} else {
+		int rear = queue->rear;
+		if (++rear >= queue->capacity)
+			rear = 0;
+		queue->rear = rear;
+	}
 	queue->size += 1;
+	queue->data[queue->rear] = x;
 }
 
 element_t dequeue(struct queue_t *queue)
 {
 	if (queue->size == 0)
 		return -1;
+	element_t v = queue->data[queue->front];
 	int front = queue->front;
-	queue->front += (front + 1) < queue->capacity ? 1: -front;
+	if ((++front) >= queue->capacity)
+	 	front = 0;
+	queue->front = front;
 	queue->size -= 1;
-	return queue->data[front];
+	return v;
 }
