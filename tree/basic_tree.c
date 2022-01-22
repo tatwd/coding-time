@@ -32,7 +32,7 @@ element_t tree_node_val(struct tree_node_t *node)
 	return node == NULL ? -1 : node->element;
 }
 
-void tree_each(struct tree_node_t * root, void (*each)(element_t))
+void tree_each(struct tree_node_t *root, void (*each)(element_t))
 {
 	if (root == NULL)
 		return;
@@ -54,9 +54,31 @@ void tree_insert_child(struct tree_node_t *root, struct tree_node_t *child)
 void tree_insert_sibling(struct tree_node_t *root, struct tree_node_t *sibling)
 {
 	if (root == NULL)
-			return;
+		return;
 	if (root->next_sibling == NULL)
 		root->next_sibling = sibling;
 	else
 		tree_insert_sibling(root->next_sibling, sibling);
+}
+
+/* 从数组的中部开始构建一棵树 */
+static struct tree_node_t *build_tree_from_middle(element_t arr[], int left,
+												  int right)
+{
+	if (left > right)
+		return NULL;
+
+	int mid = (left + right) / 2;
+
+	struct tree_node_t *root = tree_new(arr[mid]);
+	root->first_child = build_tree_from_middle(arr, left, mid - 1);
+	root->next_sibling = build_tree_from_middle(arr, mid + 1, right);
+
+	return root;
+}
+
+struct tree_node_t *build_tree(element_t arr[], int len)
+{
+	struct tree_node_t *root = build_tree_from_middle(arr, 0, len - 1);
+	return root;
 }
