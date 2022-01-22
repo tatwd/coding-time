@@ -27,7 +27,7 @@ int main(void)
 
 	int arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 
-	struct tree_node_t *root = build_tree(arr, 10);
+	struct tree_node_t *root = build_tree(arr, 9);
 	tree_each(root, each);
 
 	tree_free(root);
