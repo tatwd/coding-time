@@ -6,9 +6,9 @@ namespace tree;
 public static class TreePathSum
 {
 	/// <summary>
-	/// 利用栈 自顶向下计算所有路径和
+	/// 利用栈 自底向上计算所有路径和
 	/// </summary>
-	public static IList<int> GetPathSumFromTopByStack(Node root)
+	public static IList<int> GetPathSumFromBottomByStack(Node root)
 	{
 		var stack = new Stack<Frame>();
 		var primer = new Frame(root);
@@ -80,9 +80,9 @@ public static class TreePathSum
 	}
 
 	/// <summary>
-	/// 利用栈 自底向上计算所有路径和
+	/// 利用栈 自顶向下计算所有路径和
 	/// </summary>
-	public static IList<int> GetPathSumFromBottomByStack(Node root)
+	public static IList<int> GetPathSumFromTopByStack(Node root)
 	{
 		var sums = new List<int>();
 		var stack = new Stack<Frame2>();
