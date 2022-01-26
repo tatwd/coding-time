@@ -124,7 +124,7 @@ public static class TreePathSum
 			var popped = stack.Pop();
 
 			// 叶子结点
-			if (popped.Node.Left == null || popped.Node.Right == null)
+			if (popped.Node.Left == null && popped.Node.Right == null)
 				sums.Add(popped.Sum);
 
 			if (!stack.Any()) break;
